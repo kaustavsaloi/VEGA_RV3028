@@ -1,17 +1,11 @@
-# VEGA_RV3028
+## Author
+Kaustav Saloi (C-DAC)
 
-Custom Arduino library for RV-3028-C7 RTC optimized for VEGA boards.
+## Platform
+Developed for VEGA Thejas32 (C-DAC RISC-V platform)
 
 ## Features
-- Multi-I2C support (TwoWire)
-- EEPROM busy handling (EEbusy)
-- Burst read for stable time
-- Lightweight and fast
-
-## Usage
-
-```cpp
-TwoWire myWire = TwoWire(1);
-VEGA_RV3028 rtc(myWire);
-
-rtc.begin();
+- RV-3028 RTC support
+- Multi-I2C (TwoWire)
+- EEPROM busy handling
+- Stable burst read
