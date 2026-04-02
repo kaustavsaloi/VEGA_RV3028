@@ -18,14 +18,14 @@ bool VEGA_RV3028::isConnected() {
 void VEGA_RV3028::waitReady() {
     while (1) {
         _wire->beginTransmission(RV3028_ADDR);
-        _wire->write(0x0E);
+        _wire->write(0x0E); // Status register
         _wire->endTransmission(false);
 
         _wire->requestFrom(RV3028_ADDR, 1);
 
         if (_wire->available()) {
             uint8_t status = _wire->read();
-            if (!(status & 0x80)) {
+            if (!(status & 0x80)) { // EEbusy bit
                 break;
             }
         }
